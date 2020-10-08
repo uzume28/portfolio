@@ -13,6 +13,10 @@ body {
 
 /*timeline*/
 
+.container.port-grid.custom {
+    max-width: 85%!important;
+}
+
 .rounded-circle {
   border-radius: 50%!important;
 }
