@@ -25,4 +25,24 @@
     target: '#sideNav'
   });
 
+  $(".portfolio-modal").on('show.bs.modal', function (a, b) {
+    var self = $(this);
+    var portfolioItem = $(a.relatedTarget).closest('.portfolio-item');
+    var portfolioTitle = portfolioItem.find('.portfolio-title').text();
+    var portfolioDesc = portfolioItem.find('.portfolio-desc').text();
+    var portfolioImg = portfolioItem.find('.portfolio-img').attr('src');
+    var portfolioContent = portfolioItem.find('.portfolio-content').html();
+
+    self.find('.portfolio-modal-title').text(portfolioTitle);
+    self.find('.portfolio-modal-desc').text(portfolioDesc);
+    self.find('.portfolio-modal-img').attr('src', portfolioImg);
+    self.find('.portfolio-modal-content').html(portfolioContent);
+
+  });
+
+  $(".portfolio-modal").on('hide.bs.modal', function (a, b) {
+    //alert('close');
+
+  });
+
 })(jQuery); // End of use strict
